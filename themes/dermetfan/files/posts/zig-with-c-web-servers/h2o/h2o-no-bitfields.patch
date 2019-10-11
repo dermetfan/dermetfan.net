@@ -1,0 +1,117 @@
+diff --git a/include/h2o.h b/include/h2o.h
+index 327588f6..28fe8e52 100644
+--- a/include/h2o.h
++++ b/include/h2o.h
+@@ -130 +130 @@ typedef struct st_h2o_handler_t {
+-    unsigned supports_request_streaming : 1;
++    unsigned supports_request_streaming;
+@@ -239 +239 @@ struct st_h2o_pathconf_t {
+-        unsigned emit_request_errors : 1;
++        unsigned emit_request_errors;
+@@ -285 +285 @@ struct st_h2o_hostconf_t {
+-        unsigned reprioritize_blocking_assets : 1;
++        unsigned reprioritize_blocking_assets;
+@@ -289 +289 @@ struct st_h2o_hostconf_t {
+-        unsigned push_preload : 1;
++        unsigned push_preload;
+@@ -293 +293 @@ struct st_h2o_hostconf_t {
+-        unsigned allow_cross_origin_push : 1;
++        unsigned allow_cross_origin_push;
+@@ -423 +423 @@ struct st_h2o_globalconf_t {
+-        unsigned forward_close_connection : 1;
++        unsigned forward_close_connection;
+@@ -427 +427 @@ struct st_h2o_globalconf_t {
+-        unsigned preserve_x_forwarded_proto : 1;
++        unsigned preserve_x_forwarded_proto;
+@@ -431 +431 @@ struct st_h2o_globalconf_t {
+-        unsigned preserve_server_header : 1;
++        unsigned preserve_server_header;
+@@ -435 +435 @@ struct st_h2o_globalconf_t {
+-        unsigned emit_x_forwarded_headers : 1;
++        unsigned emit_x_forwarded_headers;
+@@ -439 +439 @@ struct st_h2o_globalconf_t {
+-        unsigned emit_via_header : 1;
++        unsigned emit_via_header;
+@@ -443 +443 @@ struct st_h2o_globalconf_t {
+-        unsigned emit_missing_date_header : 1;
++        unsigned emit_missing_date_header;
+@@ -881 +881 @@ typedef struct st_h2o_req_overrides_t {
+-    unsigned use_proxy_protocol : 1;
++    unsigned use_proxy_protocol;
+@@ -885 +885 @@ typedef struct st_h2o_req_overrides_t {
+-    unsigned proxy_preserve_host : 1;
++    unsigned proxy_preserve_host;
+@@ -1085 +1085 @@ struct st_h2o_req_t {
+-    unsigned char http1_is_persistent : 1;
++    unsigned char http1_is_persistent;
+@@ -1090 +1090 @@ struct st_h2o_req_t {
+-    unsigned char res_is_delegated : 1;
++    unsigned char res_is_delegated;
+@@ -1094 +1094 @@ struct st_h2o_req_t {
+-    unsigned char reprocess_if_too_early : 1;
++    unsigned char reprocess_if_too_early;
+@@ -1098 +1098 @@ struct st_h2o_req_t {
+-    unsigned char upstream_refused : 1;
++    unsigned char upstream_refused;
+@@ -1163 +1163 @@ typedef struct st_h2o_doublebuffer_t {
+-    unsigned char inflight : 1;
++    unsigned char inflight;
+@@ -1900,2 +1900,2 @@ typedef struct st_h2o_proxy_config_vars_t {
+-    unsigned preserve_host : 1;
+-    unsigned use_proxy_protocol : 1;
++    unsigned preserve_host;
++    unsigned use_proxy_protocol;
+diff --git a/include/h2o/header.h b/include/h2o/header.h
+index a39d06f7..fb4cb501 100644
+--- a/include/h2o/header.h
++++ b/include/h2o/header.h
+@@ -33 +33 @@ typedef struct st_h2o_header_flags_t {
+-    unsigned char dont_compress : 1;
++    unsigned char dont_compress;
+diff --git a/include/h2o/http2_internal.h b/include/h2o/http2_internal.h
+index 817cc063..815f4b08 100644
+--- a/include/h2o/http2_internal.h
++++ b/include/h2o/http2_internal.h
+@@ -110 +110 @@ struct st_h2o_http2_stream_t {
+-            unsigned promise_sent : 1;
++            unsigned promise_sent;
+@@ -113 +113 @@ struct st_h2o_http2_stream_t {
+-            unsigned casper_is_ready : 1;
++            unsigned casper_is_ready;
+@@ -116 +116 @@ struct st_h2o_http2_stream_t {
+-    unsigned blocked_by_server : 1;
++    unsigned blocked_by_server;
+@@ -120 +120 @@ struct st_h2o_http2_stream_t {
+-    unsigned _conn_stream_in_progress : 1;
++    unsigned _conn_stream_in_progress;
+diff --git a/include/h2o/mruby_.h b/include/h2o/mruby_.h
+index 6545cd02..75d74eb9 100644
+--- a/include/h2o/mruby_.h
++++ b/include/h2o/mruby_.h
+@@ -156 +156 @@ struct st_h2o_mruby_sender_t {
+-    unsigned char final_sent : 1;
++    unsigned char final_sent;
+diff --git a/include/h2o/socket.h b/include/h2o/socket.h
+index aa7c3904..c36942a1 100644
+--- a/include/h2o/socket.h
++++ b/include/h2o/socket.h
+@@ -125 +125 @@ struct st_h2o_socket_t {
+-        uint8_t notsent_is_minimized : 1;
++        uint8_t notsent_is_minimized;
+diff --git a/include/h2o/token.h b/include/h2o/token.h
+index 49938755..e1547fc9 100644
+--- a/include/h2o/token.h
++++ b/include/h2o/token.h
+@@ -34,6 +34,6 @@ typedef struct st_h2o_token_flags_t {
+-    unsigned char proxy_should_drop_for_req : 1;
+-    unsigned char proxy_should_drop_for_res : 1;
+-    unsigned char is_init_header_special : 1;
+-    unsigned char http2_should_reject : 1;
+-    unsigned char copy_for_push_request : 1;
+-    unsigned char dont_compress : 1; /* consult `h2o_header_t:dont_compress` as well */
++    unsigned char proxy_should_drop_for_req;
++    unsigned char proxy_should_drop_for_res;
++    unsigned char is_init_header_special;
++    unsigned char http2_should_reject;
++    unsigned char copy_for_push_request;
++    unsigned char dont_compress; /* consult `h2o_header_t:dont_compress` as well */
