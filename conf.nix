@@ -22,5 +22,7 @@
       enable = true;
       extraLanguages = [ "nix" "rust" ];
     };
+
+    services.disqus.shortname = "dermetfan-blog";
   };
 }

@@ -17,6 +17,9 @@ I tried the following web servers:
 
 *TL;DR: C translation is obviously not production ready, but I was able to get it to work with H2O.*
 
+{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+---
+
 <<<
 
 # [H2O](https://h2o.examp1e.net)
@@ -167,6 +170,9 @@ But that is to be expected from such an early version of the language.
 
 I find it remarkable that C translation works so well already. Very promising!
 
+{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+---
+
 <<<
 
 # [facil.io](http://facil.io)
@@ -191,6 +197,9 @@ pub const fiobj_free = @compileError("unable to translate function");
            ^
 ```
 
+{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+---
+
 <<<
 
 # [LWAN](https://lwan.ws)
@@ -211,3 +220,6 @@ Those macros can clearly not easily be translated to Zig, so the journey ends ab
         struct lwan_response *response __attribute__((unused)),                \
         void *data __attribute__((unused)))
 ```
+
+{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+---
