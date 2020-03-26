@@ -1,5 +1,6 @@
 {---
 title = "Trying Zig with C web servers";
+path = "/posts/zig-with-c-web-servers";
 tags = [ "code" "zig" "nix" "h2o" "facil.io" "lwan" ];
 date = "2020-03-26";
 ---}
@@ -11,13 +12,13 @@ Here are my results.
 
 I tried the following web servers:
 
-- [H2O](/posts/zig-with-c-web-servers-2.html) (success)
-- [facil.io](/posts/zig-with-c-web-servers-3.html) (failure)
-- [LWAN](/posts/zig-with-c-web-servers-4.html) (failure)
+- [H2O]({{ meta.path }}-2.html) (success)
+- [facil.io]({{ meta.path }}-3.html) (failure)
+- [LWAN]({{ meta.path }}-4.html) (failure)
 
 *TL;DR: C translation is obviously not production ready, but I was able to get it to work with H2O.*
 
-{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
 <<<
@@ -28,7 +29,7 @@ This is the only one I had success with.
 
 I ported the `simple.c` example to Zig, following this [intro](https://powerdns.org/libh2o/) to `libh2o`.
 
-[Here](/posts/zig-with-c-web-servers/h2o.tar.gz) you can download the entire project.
+[Here]({{ meta.path }}/h2o.tar.gz) you can download the entire project.
 
 A few problems came up which I want to briefly discuss below.
 
@@ -41,7 +42,7 @@ There was an effort to fix this but it seems to have stagnated:
 - [PR #4165](https://github.com/ziglang/zig/pull/4165)
 
 Consequently we have to remove all bitfields from H2O.
-Fortunately using Nix it is trivial to apply a [patch](/posts/zig-with-c-web-servers/h2o/h2o-no-bitfields.patch) and use the recompiled H2O:
+Fortunately using Nix it is trivial to apply a [patch]({{ meta.path }}/h2o/h2o-no-bitfields.patch) and use the recompiled H2O:
 
 ```nix
 pkgs.h2o.overrideAttrs (oldAttrs: {
@@ -65,7 +66,7 @@ pub usingnamespace @cImport({
 We can fix that be setting the `H2O_USE_LIBUV` preprocessor variable.
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 1 4 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 1 4 "${meta.path}/h2o/src/c.zig" }}
 ```
 
 If you want to compile H2O without libuv support you need to pass that to H2O's `CMakeLists.txt`. Using Nix that looks like this:
@@ -95,7 +96,7 @@ That `H2O_STRLIT` macro cannot be used in Zig code, so we will have to type the 
 For common use cases you can write little wrapper functions to make it more comfortable:
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 149 155 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 149 155 "${meta.path}/h2o/src/c.zig" }}
 ```
 
 ## Zig stdlib bug when linking libc
@@ -103,7 +104,7 @@ For common use cases you can write little wrapper functions to make it more comf
 Setting up the listening socket is easier than in C. Zig's standard library handles everything for us:
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 28 30 "posts/zig-with-c-web-servers/h2o/src/main.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 28 30 "${meta.path}/h2o/src/main.zig" }}
 ```
 
 Here I hit a [bug](https://github.com/ziglang/zig/issues/4797) in the standard library, but that was quickly solved by a Zig contributor.
@@ -127,7 +128,7 @@ When passing the size of a pointer to `h2o_create_handler()` I had to take it ti
 I thought pointer sizes would be the same so the reason is not entirely clear to me, if you have an idea here I would be glad to hear it.
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 17 17 "posts/zig-with-c-web-servers/h2o/src/main.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 17 17 "${meta.path}/h2o/src/main.zig" }}
 ```
 
 ## H2O_TOKEN_…
@@ -138,13 +139,13 @@ To avoid looking up tokens all the time, we can assign all the tokens on startup
 
 ```zig
 // lookup_token() cannot run comptime so these have to be vars...
-{{ lib.theme.dermetfan.codeSnippet 27 30 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 27 30 "${meta.path}/h2o/src/c.zig" }}
 // …
 
-{{ lib.theme.dermetfan.codeSnippet 83 83 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
-{{ lib.theme.dermetfan.codeSnippetIndent 104 107 "posts/zig-with-c-web-servers/h2o/src/c.zig" " " (4 * 1) }}
+{{ lib.theme.dermetfan.codeSnippet 83 83 "${meta.path}/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippetIndent 104 107 "${meta.path}/h2o/src/c.zig" " " (4 * 1) }}
     // …
-{{ lib.theme.dermetfan.codeSnippet 147 151 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 147 151 "${meta.path}/h2o/src/c.zig" }}
 ```
 
 Admittedly that is not very nice. Maybe we could build the `H2O_TOKEN_…` structs directly and assign them to actual `const`s.
@@ -154,13 +155,13 @@ Admittedly that is not very nice. Maybe we could build the `H2O_TOKEN_…` struc
 We can simplify here with a little helper.
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 157 159 "posts/zig-with-c-web-servers/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 157 159 "${meta.path}/h2o/src/c.zig" }}
 ```
 
 That allows us to use `std.mem.eql()` instead of `h2o_ismem()`, if desired.
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 50 50 "posts/zig-with-c-web-servers/h2o/src/main.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 50 50 "${meta.path}/h2o/src/main.zig" }}
 ```
 
 ## Conclusion
@@ -170,7 +171,7 @@ But that is to be expected from such an early version of the language.
 
 I find it remarkable that C translation works so well already. Very promising!
 
-{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
 <<<
@@ -182,10 +183,10 @@ I was able to start the server and answer a request.
 Unfortunately Zig is unable to translate `fiobj_free()`.
 Therefore I did not think it was worth investigating further.
 
-[Download](/posts/zig-with-c-web-servers/facil.io.tar.gz) all files.
+[Download]({{ meta.path }}/facil.io.tar.gz) all files.
 
 ```zig
-{{ lib.theme.dermetfan.readFile "posts/zig-with-c-web-servers/facil.io/main.zig" }}
+{{ lib.theme.dermetfan.readFile "${meta.path}/facil.io/main.zig" }}
 ```
 
 ```
@@ -197,7 +198,7 @@ pub const fiobj_free = @compileError("unable to translate function");
            ^
 ```
 
-{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
 <<<
@@ -221,5 +222,5 @@ Those macros can clearly not easily be translated to Zig, so the journey ends ab
         void *data __attribute__((unused)))
 ```
 
-{{ templates.services.disqus { path = "/posts/zig-with-c-web-servers"; } }}
+{{ templates.services.disqus { inherit (meta) path; } }}
 ---
