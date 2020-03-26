@@ -98,7 +98,7 @@ That `H2O_STRLIT` macro cannot be used in Zig code, so we will have to type the 
 For common use cases you can write little wrapper functions to make it more comfortable:
 
 ```zig
-{{ lib.theme.dermetfan.codeSnippet 149 155 "${meta.path}/h2o/src/c.zig" }}
+{{ lib.theme.dermetfan.codeSnippet 153 155 "${meta.path}/h2o/src/c.zig" }}
 ```
 
 ## Zig stdlib bug when linking libc
