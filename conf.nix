@@ -9,6 +9,9 @@
       copyright = "Public Domain";
     };
 
-    lib.highlightjs.enable = true;
+    lib.highlightjs = {
+      enable = true;
+      extraLanguages = [ "nix" "rust" ];
+    };
   };
 }
