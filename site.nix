@@ -32,8 +32,17 @@ rec {
       inherit env;
     });
 
+    tags = mkTaxonomyData {
+      data = pages.posts.list;
+      taxonomies = [ "tags" ];
+    };
+
     menu = with pages; [
       (lib.head index)
+      {
+        title = "Tags";
+        path = lib.mkTaxonomyPath "tags";
+      }
       about
     ];
 
@@ -69,6 +78,22 @@ rec {
       pathPrefix = "/posts/";
       template = templates.post.full;
       author = data.author;
+    };
+
+    tags = mkTaxonomyPages {
+      data = data.tags;
+      taxonomyTemplate = templates.taxonomy.full;
+      termTemplate = templates.taxonomy.term.full;
+      taxonomyPageFn = taxonomy: {
+        title = lib.theme.dermetfan.capitalize taxonomy;
+      };
+      termPageFn = taxonomy: tag: {
+        title =
+          (lib.strings.removeSuffix "s" (
+            lib.theme.dermetfan.capitalize taxonomy
+          )) +
+          ": ${tag}";
+      };
     };
   };
 

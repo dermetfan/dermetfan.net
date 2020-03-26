@@ -70,5 +70,12 @@
       lib.strings.concatStringsSep "\n" (
         indent prefix count (codeSnippetLines first last file)
       );
+
+    capitalize = string:
+      let
+        chars = lib.strings.stringToCharacters string;
+      in lib.concatStrings (
+        [ (lib.strings.toUpper (lib.lists.head chars)) ] ++ (lib.lists.tail chars)
+      );
   };
 }

@@ -5,6 +5,8 @@ tags = [ "code" "zig" "nix" "h2o" "facil.io" "lwan" ];
 date = "2020-03-26";
 ---}
 
+{{ templates.partials.taxonomyTermsList "tags" meta.tags }}
+
 I wanted to try using Zig to build an application server.
 
 The C integration should, in theory, allow me to use an existing web server library.
