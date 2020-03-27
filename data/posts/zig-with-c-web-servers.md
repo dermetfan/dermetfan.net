@@ -14,18 +14,15 @@ Here are my results.
 
 I tried the following web servers:
 
-- [H2O]({{ meta.path }}-2.html) (success)
-- [facil.io]({{ meta.path }}-3.html) (failure)
-- [LWAN]({{ meta.path }}-4.html) (failure)
+- [H2O](#h2o) is usable with some workarounds.
+- [facil.io](#facil.io) works in principle but is unusable in practice.
+- [LWAN](#lwan) was a complete failure.
 
 *TL;DR: C translation is obviously not production ready, but I was able to get it to work with H2O.*
 
-{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
-<<<
-
-# [H2O](https://h2o.examp1e.net)
+# [H2O](https://h2o.examp1e.net) <a name="h2o"></a>
 
 This is the only one I had success with.
 
@@ -173,12 +170,9 @@ But that is to be expected from such an early version of the language.
 
 I find it remarkable that C translation works so well already. Very promising!
 
-{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
-<<<
-
-# [facil.io](http://facil.io)
+# [facil.io](http://facil.io) <a name="facil.io"></a>
 
 I was able to start the server and answer a request.
 
@@ -200,12 +194,9 @@ pub const fiobj_free = @compileError("unable to translate function");
            ^
 ```
 
-{{ templates.services.disqus { inherit (meta) path; } }}
 ---
 
-<<<
-
-# [LWAN](https://lwan.ws)
+# [LWAN](https://lwan.ws) <a name="lwan"></a>
 
 Those macros can clearly not easily be translated to Zig, so the journey ends abruptly.
 
@@ -225,4 +216,3 @@ Those macros can clearly not easily be translated to Zig, so the journey ends ab
 ```
 
 {{ templates.services.disqus { inherit (meta) path; } }}
----
