@@ -14,7 +14,7 @@ pub fn main() !void {
 
         { // /hello
             const pathconf: *c.h2o_pathconf_t = c.h2o_config_register_path(hostconf, "/hello", 0);
-            const handler: *c.h2o_handler_t = c.h2o_create_handler(pathconf, @sizeOf(*c.h2o_handler_t) * 4);
+            const handler: *c.h2o_handler_t = c.h2o_create_handler(pathconf, @sizeOf(c.h2o_handler_t));
             handler.on_req = helloHandler;
         }
     }

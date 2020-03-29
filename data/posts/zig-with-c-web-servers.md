@@ -121,15 +121,6 @@ In case you are using a version before commit `778dbc17acce77588a46a27074ecb8b41
 + pub fn setsockopt(fd: fd_t, level: u32, optname: u32, opt: []u8) SetSockOptError!void {
 ```
 
-## Pointer size
-
-When passing the size of a pointer to `h2o_create_handler()` I had to take it times 4, any less and H2O internals would dereference a null pointer.
-I thought pointer sizes would be the same so the reason is not entirely clear to me, if you have an idea here I would be glad to hear it.
-
-```zig
-{{ lib.theme.dermetfan.codeSnippet 17 17 "${meta.path}/h2o/src/main.zig" }}
-```
-
 ## H2O_TOKEN_…
 
 Similarly Zig can not parse the `H2O_TOKEN_…` macros. There is a `h2o_lookup_token()` function that we can use though.
