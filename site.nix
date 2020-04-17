@@ -69,7 +69,7 @@ rec {
     };
 
     about = {
-      path = "/about";
+      path = "/about/index.html";
       template = templates.page.full;
     } // data.about;
 
