@@ -44,7 +44,7 @@ Find me on:
 ### Lua
 
 - [Git and Mercurial plugin](https://hg.sr.ht/~dermetfan/micro-vcs) for the [micro](https://micro-editor.github.io/) text editor  
-  *No longer required as such a feature comes with micro since {{ templates.partials.github-issue "zyedidia" "micro" 1487 [ "title" ] }}.*
+  *Abandoned as such a feature comes with micro since {{ templates.partials.github-issue "zyedidia" "micro" 1487 [ "title" ] }}.*
 
 ## Involvement in Free and Open Source Projects
 

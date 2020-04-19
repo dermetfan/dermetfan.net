@@ -80,7 +80,7 @@
 
     fetchurlImpure = { runCommandLocal, curl, cacert }:
       { url, curlOpts ? "" }:
-      runCommandLocal "fetchurlImpure" {
+      runCommandLocal "fetchurlImpure-${builtins.getEnv "STYX_FETCHURL_VERSION"}" {
         __noChroot = true;
         inherit url;
         buildInputs = [

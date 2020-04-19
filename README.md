@@ -10,3 +10,7 @@ Examples:
 ```
 styx live --option sandbox relaxed
 ```
+
+## Update Web Content
+
+The environment variable `STYX_FETCHURL_VERSION` can be set to an arbitrary value to fetch again.
