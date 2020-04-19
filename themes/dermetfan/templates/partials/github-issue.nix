@@ -1,6 +1,5 @@
 { lib, conf, pkgs, ... }:
-ownerArg: repoArg: numberArg:
-showArg:
+owner: repo: number: showArg:
 
 let
   show =
@@ -23,32 +22,34 @@ let
         state = true;
       } // showArg;
 
-  fetchurlImpure = url: (pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {}) {
-    inherit url;
-    curlOpts = "-H 'Authorization: token ${conf.secrets.github.personalAccessToken}'";
-  };
+  callApi = graphql: (
+    (pkgs.callPackage lib.theme.dermetfan.githubApi {
+      fetchurlImpure = pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {};
+    })
+      conf.secrets.github.personalAccessToken
+      graphql
+  ).data;
 
-  callApi = endpoint: builtins.fromJSON (
-    builtins.readFile (
-      fetchurlImpure "https://api.github.com/${endpoint}"
-    )
-  );
-
-  repo = callApi "repos/${ownerArg}/${repoArg}";
-
-  issue = callApi "repos/${ownerArg}/${repoArg}/issues/${toString numberArg}";
-
-  pr = if !issue ? "pull_request" then {} else builtins.fromJSON (
-    builtins.readFile (
-      fetchurlImpure issue.pull_request.url
-    )
-  );
+  data = (callApi ''{
+    repository(name: "${repo}", owner: "${owner}") {
+      issueOrPullRequest(number: ${toString number}) {
+        ... on Issue {
+          url title
+          issueState: state
+        }
+        ... on PullRequest {
+          url title
+          prState: state
+        }
+      }
+    }
+  }'').repository.issueOrPullRequest;
 in
 
 lib.concatStringsSep " " (
-  (lib.optional show.repo repo.name) ++
-  (lib.optional show.type (if pr != {} then "PR" else "issue")) ++
-  [ "[\\#${toString issue.number}](${issue.html_url})" ] ++
-  (lib.optional show.title "\"${issue.title}\"") ++
-  (lib.optional show.state "(${if pr.merged or false then "merged" else issue.state})")
+  (lib.optional show.repo repo) ++
+  (lib.optional show.type (if data ? prState then "PR" else "issue")) ++
+  [ "[\\#${toString number}](${data.url})" ] ++
+  (lib.optional show.title "\"${data.title}\"") ++
+  (lib.optional show.state "(${data.prState or data.issueState})")
 )

@@ -90,5 +90,19 @@
       } ''
         curl ${curlOpts} "$url" > $out
       '';
+
+    githubApi = { fetchurlImpure }:
+      token: query: builtins.fromJSON (
+        builtins.readFile (
+          fetchurlImpure {
+            url = https://api.github.com/graphql;
+            curlOpts = lib.concatStringsSep " " [
+              "-X POST"
+              "-H 'Authorization: token ${token}'"
+              "-d ${lib.escapeShellArg (builtins.toJSON { inherit query; })}"
+            ];
+          }
+        )
+      );
   };
 }
