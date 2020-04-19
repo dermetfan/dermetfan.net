@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, conf, pkgs, ... }:
 ownerArg: repoArg: numberArg:
 showArg:
 
@@ -6,6 +6,7 @@ let
   show =
     if builtins.isList showArg then
       { # only explicit ones
+        owner = false;
         repo = false;
         type = false;
         title = false;
@@ -15,27 +16,31 @@ let
       )
     else
       { # sensible defaults
+        owner = false;
         repo = false;
         type = true;
         title = true;
         state = true;
       } // showArg;
 
-  repo = builtins.fromJSON (
+  fetchurlImpure = url: (pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {}) {
+    inherit url;
+    curlOpts = "-H 'Authorization: token ${conf.secrets.github.personalAccessToken}'";
+  };
+
+  callApi = endpoint: builtins.fromJSON (
     builtins.readFile (
-      builtins.fetchurl "https://api.github.com/repos/${ownerArg}/${repoArg}"
+      fetchurlImpure "https://api.github.com/${endpoint}"
     )
   );
 
-  issue = builtins.fromJSON (
-    builtins.readFile (
-      builtins.fetchurl "https://api.github.com/repos/${ownerArg}/${repoArg}/issues/${toString numberArg}"
-    )
-  );
+  repo = callApi "repos/${ownerArg}/${repoArg}";
+
+  issue = callApi "repos/${ownerArg}/${repoArg}/issues/${toString numberArg}";
 
   pr = if !issue ? "pull_request" then {} else builtins.fromJSON (
     builtins.readFile (
-      builtins.fetchurl issue.pull_request.url
+      fetchurlImpure issue.pull_request.url
     )
   );
 in

@@ -25,4 +25,6 @@
 
     services.disqus.shortname = "dermetfan-blog";
   };
+
+  secrets = import ./secrets.nix;
 }

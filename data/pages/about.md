@@ -4,8 +4,9 @@ title = "About";
 
 I am studying Bachelor of Computer Science (now called Bachelor of Informatics) at [H-BRS].
 
-Currently I focus on [Rust] and the [NixOS] ecosystem.
+Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
 
+[Zig]: https://ziglang.org
 [Rust]: https://rust-lang.org
 [NixOS]: https://nixos.org
 [H-BRS]: https://h-brs.de
@@ -26,7 +27,8 @@ Find me on:
 
 ### Rust
 
-- [ISO 8601](https://crates.io/crates/iso-8601) parser
+- [ISO 8601](https://crates.io/crates/iso-8601) parser.  
+  *Born out of {{ templates.partials.github-issue "chronotope" "chrono" 244 { repo = true; title = false; } }}.*
 
 ### Zig
 
@@ -48,9 +50,10 @@ Find me on:
 
 ### Home Manager
 
+#### Authored
+
 - {{ templates.partials.github-issue "rycee" "home-manager" 1163 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1162 {} }}
-- {{ templates.partials.github-issue "rycee" "home-manager" 1106 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"  932 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"  296 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"   56 {} }}
@@ -65,6 +68,10 @@ Find me on:
 - {{ templates.partials.github-issue "rycee" "home-manager"  55 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"   7 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"   4 {} }}
+
+#### Reviewed or Merged
+
+- {{ templates.partials.github-issue "rycee" "home-manager" 1106 {} }}
 
 ### NixOS
 

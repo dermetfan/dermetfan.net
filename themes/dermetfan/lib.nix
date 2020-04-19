@@ -77,5 +77,18 @@
       in lib.concatStrings (
         [ (lib.strings.toUpper (lib.lists.head chars)) ] ++ (lib.lists.tail chars)
       );
+
+    fetchurlImpure = { runCommandLocal, curl, cacert }:
+      { url, curlOpts ? "" }:
+      runCommandLocal "fetchurlImpure" {
+        __noChroot = true;
+        inherit url;
+        buildInputs = [
+          curl
+          cacert
+        ];
+      } ''
+        curl ${curlOpts} "$url" > $out
+      '';
   };
 }

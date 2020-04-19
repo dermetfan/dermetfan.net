@@ -1,6 +1,7 @@
 {
   styx,
-  extraConf ? {}
+  extraConf ? {},
+  pkgs ? import <nixpkgs> {}
 }:
 
 rec {
@@ -16,7 +17,7 @@ rec {
     in
       styxLib.themes.load {
         inherit styxLib themes;
-        extraEnv = { inherit data pages; };
+        extraEnv = { inherit data pages pkgs; };
         extraConf = [ ./conf.nix extraConf ];
       }
   ) conf lib files templates env;
