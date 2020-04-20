@@ -51,5 +51,5 @@ lib.concatStringsSep " " (
   (lib.optional show.type (if data ? prState then "PR" else "issue")) ++
   [ "[\\#${toString number}](${data.url})" ] ++
   (lib.optional show.title "\"${data.title}\"") ++
-  (lib.optional show.state "(${data.prState or data.issueState})")
+  (lib.optional show.state "(${lib.toLower (data.prState or data.issueState)})")
 )
