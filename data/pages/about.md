@@ -38,7 +38,7 @@ Find me on:
 
 - [libGDX] tutorials on [YouTube](https://youtube.com/dermetfan)
 - [`libgdx-utils`](https://hg.sr.ht/~dermetfan/libgdx-utils) and `libgdx-utils-box2d`, a support library for [libGDX]-powered games and applications  
-  *I have not worked on this library in years so I'm happy to see it live on in Tommy Ettinger's [fork](https://github.com/tommyettinger/gdx-utils).*
+  *I have not worked on this library in years so I am happy to see it live on in Tommy Ettinger's [fork](https://github.com/tommyettinger/gdx-utils).*
 
 [libGDX]: https://libgdx.com
 
@@ -63,7 +63,6 @@ Find me on:
 - {{ templates.partials.github-issue "rycee" "home-manager"   16 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"    3 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"    2 {} }}
-
 - {{ templates.partials.github-issue "rycee" "home-manager" 122 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"  84 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"  55 {} }}
@@ -78,7 +77,6 @@ Find me on:
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 5 {} }}
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 4 {} }}
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 1 {} }}
-
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 3 {} }}
 
 ### NixOS
@@ -94,7 +92,6 @@ Find me on:
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 25009 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 21538 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 20020 {} }}
-
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 17068 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 20448 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 20449 {} }}
@@ -126,7 +123,6 @@ Find me on:
 ### ructe
 
 - {{ templates.partials.github-issue "kaj" "ructe" 33 {} }}
-
 - {{ templates.partials.github-issue "kaj" "ructe"  4 {} }}
 
 ### Cursive
@@ -163,7 +159,6 @@ Find me on:
 - {{ templates.partials.github-issue "libgdx" "libgdx" 1665 {} }}
 - {{ templates.partials.github-issue "libgdx" "libgdx" 1602 {} }}
 - {{ templates.partials.github-issue "libgdx" "libgdx"  861 {} }}
-
 - {{ templates.partials.github-issue "libgdx" "libgdx" 3057 {} }}
 - {{ templates.partials.github-issue "libgdx" "libgdx" 2974 {} }}
 - {{ templates.partials.github-issue "libgdx" "libgdx" 2947 {} }}
