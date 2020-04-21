@@ -5,6 +5,8 @@ date = "2020-03-26";
 path = "/posts/zig-with-c-web-servers";
 ---}
 
+:sectanchors:
+
 +++{{ templates.partials.taxonomyTermsList "tags" meta.tags }}+++
 
 I wanted to try using Zig to build an application server.

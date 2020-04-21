@@ -111,6 +111,9 @@ rec {
     };
 
     postGen = ''
+      asciidoctor_css=$(dirname $(realpath ${pkgs.asciidoctor}/bin/asciidoctor))/../lib/ruby/gems/*/gems/${pkgs.asciidoctor.meta.name}/data/stylesheets/asciidoctor-default.css
+      head -n 185 $asciidoctor_css | tail -n 3 > $out/styles/asciidoctor-default-anchor.css
+
       cd $out/posts/zig-with-c-web-servers
       tar -chaf h2o.tar.gz h2o
       tar -chaf facil.io.tar.gz facil.io
