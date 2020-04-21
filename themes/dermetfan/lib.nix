@@ -2,7 +2,9 @@
 
 {
   theme.dermetfan = rec {
-    readFile = file: builtins.readFile (./files + "/${file}");
+    filePath = file: "${./files}/${file}";
+
+    readFile = file: builtins.readFile (filePath file);
 
     lines = text: lib.strings.splitString "\n" text;
 

@@ -1,11 +1,11 @@
 {---
 title = "Trying Zig with C web servers";
-path = "/posts/zig-with-c-web-servers";
 tags = [ "code" "zig" "nix" "h2o" "facil.io" "lwan" ];
 date = "2020-03-26";
+path = "/posts/zig-with-c-web-servers";
 ---}
 
-{{ templates.partials.taxonomyTermsList "tags" meta.tags }}
++++{{ templates.partials.taxonomyTermsList "tags" meta.tags }}+++
 
 I wanted to try using Zig to build an application server.
 
@@ -14,184 +14,204 @@ Here are my results.
 
 I tried the following web servers:
 
-- [H2O](#h2o) is usable with some workarounds.
-- [facil.io](#facil.io) works in principle but is unusable in practice.
-- [LWAN](#lwan) was a complete failure.
+- <<_h2o, H2O>> is usable with some workarounds.
+- <<_facil_io, facil.io>> works in principle but is unusable in practice.
+- <<_lwan, LWAN>> was a complete failure.
 
-*TL;DR: C translation is obviously not production ready, but I was able to get it to work with H2O.*
+_TL;DR: C translation is obviously not production ready, but I was able to get it to work with H2O._
 
----
+'''
 
-# [H2O](https://h2o.examp1e.net) <a name="h2o"></a>
+== https://h2o.examp1e.net[H2O]
+
+:files: {{ lib.theme.dermetfan.filePath meta.path }}/h2o
 
 This is the only one I had success with.
 
-I ported the `simple.c` example to Zig, following this [intro](https://powerdns.org/libh2o/) to `libh2o`.
+I ported the `simple.c` example to Zig, following this https://powerdns.org/libh2o/[intro] to `libh2o`.
 
-[Here]({{ meta.path }}/h2o.tar.gz) you can download the entire project.
+link:{{ meta.path }}/h2o.tar.gz[Here] you can download the entire project.
 
 A few problems came up which I want to briefly discuss below.
 
-## Zig cannot translate C bitfields
+=== Zig cannot translate C bitfields
 
 H2O makes use of C bitfields throughout its codebase. Unfortunately, Zig does not (yet) understand them.
 There was an effort to fix this but it seems to have stagnated:
 
-- [Issue #1499](https://github.com/ziglang/zig/issues/1499)
-- [PR #4165](https://github.com/ziglang/zig/pull/4165)
+- +++{{ templates.partials.github-issue "ziglang" "zig" 1499 {} }}+++
+- +++{{ templates.partials.github-issue "ziglang" "zig" 4165 {} }}+++
 
 Consequently we have to remove all bitfields from H2O.
-Fortunately using Nix it is trivial to apply a [patch]({{ meta.path }}/h2o/h2o-no-bitfields.patch) and use the recompiled H2O:
+Fortunately using Nix it is trivial to apply a link:{{ meta.path }}/h2o/h2o-no-bitfields.patch[patch] and use the recompiled H2O:
 
-```nix
+[source, nix]
+----
 pkgs.h2o.overrideAttrs (oldAttrs: {
   patches = [ ./h2o-no-bitfields.patch ];
 });
-```
+----
 
-## libuv
+=== libuv
 
 H2O has its own event loop implementation that is faster than libuv, so for a simple demo I did not want to link against libuv.
 So without libuv in the build environment obviously the header file cannot be found.
 
-```
+----
 ./src/c.zig:1:20: error: C import failed
 pub usingnamespace @cImport({
                    ^
 /nix/store/…-h2o-2.3.0-beta2-dev/include/h2o/socket/uv-binding.h:27:10: note: 'uv.h' file not found
 #include <uv.h>
-```
+----
 
 We can fix that be setting the `H2O_USE_LIBUV` preprocessor variable.
 
-```zig
-{{ lib.theme.dermetfan.codeSnippet 1 4 "${meta.path}/h2o/src/c.zig" }}
-```
+[source, zig]
+----
+include::{files}/src/c.zig[lines=1..4]
+----
 
 If you want to compile H2O without libuv support you need to pass that to H2O's `CMakeLists.txt`. Using Nix that looks like this:
 
-```nix
+[source, nix]
+----
 pkgs.h2o.overrideAttrs (oldAttrs: {
   cmakeFlags = [ "-DDISABLE_LIBUV=1" ];
 });
-```
+----
 
-## `#define H2O_STRLIT`
+=== `#define H2O_STRLIT`
 
 H2O passes strings around with an additional length parameter using the preprocessor.
 
-```c
+[source, c]
+----
 h2o_iovec_init(H2O_STRLIT("default");
-```
+----
 
 That expands to:
 
-```c
+[source, c]
+----
 h2o_iovec_init("default", 7)
-```
+----
 
 That `H2O_STRLIT` macro cannot be used in Zig code, so we will have to type the length ourselves.
 
 For common use cases you can write little wrapper functions to make it more comfortable:
 
-```zig
-{{ lib.theme.dermetfan.codeSnippet 153 155 "${meta.path}/h2o/src/c.zig" }}
-```
+[source, zig]
+----
+include::{files}/src/c.zig[lines=153..155, indent=0]
+----
 
-## Zig stdlib bug when linking libc
+=== Zig stdlib bug when linking libc
 
 Setting up the listening socket is easier than in C. Zig's standard library handles everything for us:
 
-```zig
-{{ lib.theme.dermetfan.codeSnippet 28 30 "${meta.path}/h2o/src/main.zig" }}
-```
+[source, zig]
+----
+include::{files}/src/main.zig[lines=28..30, indent=0]
+----
 
-Here I hit a [bug](https://github.com/ziglang/zig/issues/4797) in the standard library, but that was quickly solved by a Zig contributor.
+Here I hit +++{{ templates.partials.github-issue "ziglang" "zig" 4797 [ "type" "number" ] }}+++ in the standard library, but that was quickly solved by a Zig contributor.
 
 In case you are using a version before commit `778dbc17acce77588a46a27074ecb8b418786d94`, there is a workaround.
 
-- Make a copy of the stdlib
-- Replace the `setsockopt()` signature in `std/os.zig` with the one below
-- Use a compiler binary that is at a path relative to your stdlib
-
-> Zig locates lib files relative to executable path by searching up the filesystem tree for a sub-path of `lib/zig/std/std.zig` or `lib/std/std.zig`. Typically the former is an install and the latter a git working tree which contains the build directory. ([source](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code))
-
-```patch
+. Make a copy of the stdlib.
+. Replace the `setsockopt()` signature in `std/os.zig`:
++
+[source, patch]
+----
 - pub fn setsockopt(fd: fd_t, level: u32, optname: u32, opt: []const u8) SetSockOptError!void {
 + pub fn setsockopt(fd: fd_t, level: u32, optname: u32, opt: []u8) SetSockOptError!void {
-```
+----
+. Use a compiler binary that is at a path relative to your stdlib:
++
+[quote, 'https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code[Contribution Guidelines]']
+____
+Zig locates lib files relative to executable path by searching up the filesystem tree for a sub-path of `lib/zig/std/std.zig` or `lib/std/std.zig`. Typically the former is an install and the latter a git working tree which contains the build directory.
+____
 
-## H2O_TOKEN_…
+=== H2O_TOKEN_…
 
 Similarly Zig can not parse the `H2O_TOKEN_…` macros. There is a `h2o_lookup_token()` function that we can use though.
 
 To avoid looking up tokens all the time, we can assign all the tokens on startup of our program to our own constants.
 
-```zig
+[source, zig]
+----
 // lookup_token() cannot run comptime so these have to be vars...
-{{ lib.theme.dermetfan.codeSnippet 27 30 "${meta.path}/h2o/src/c.zig" }}
+include::{files}/src/c.zig[lines=27..30, indent=0]
 // …
 
-{{ lib.theme.dermetfan.codeSnippet 83 83 "${meta.path}/h2o/src/c.zig" }}
-{{ lib.theme.dermetfan.codeSnippetIndent 104 107 "${meta.path}/h2o/src/c.zig" " " (4 * 1) }}
+include::{files}/src/c.zig[lines=83, indent=0]
+include::{files}/src/c.zig[lines=104..107, indent=4]
     // …
-{{ lib.theme.dermetfan.codeSnippet 147 151 "${meta.path}/h2o/src/c.zig" }}
-```
+include::{files}/src/c.zig[lines=147..151, indent=0]
+----
 
-Admittedly that is not very nice. Maybe we could build the `H2O_TOKEN_…` structs directly and assign them to actual `const`s.
+Admittedly that is not very nice. Maybe we could build the `H2O_TOKEN_…` structs directly and assign them to actual ``const``s.
 
-## Converting `h2o_iovec_t` to slices
+=== Converting `h2o_iovec_t` to slices
 
 We can simplify here with a little helper.
 
-```zig
-{{ lib.theme.dermetfan.codeSnippet 157 159 "${meta.path}/h2o/src/c.zig" }}
-```
+[source, zig]
+----
+include::{files}/src/c.zig[lines=157..159, indent=0]
+----
 
 That allows us to use `std.mem.eql()` instead of `h2o_ismem()`, if desired.
 
-```zig
-{{ lib.theme.dermetfan.codeSnippet 50 50 "${meta.path}/h2o/src/main.zig" }}
-```
+[source, zig]
+----
+include::{files}/src/main.zig[lines=50, indent=0]
+----
 
-## Conclusion
+=== Conclusion
 
 Since this was the only web server I could get to work, there is still work to do in the C translation.
 But that is to be expected from such an early version of the language.
 
 I find it remarkable that C translation works so well already. Very promising!
 
----
+'''
 
-# [facil.io](http://facil.io) <a name="facil.io"></a>
+== http://facil.io[facil.io]
+
+:files: {{ lib.theme.dermetfan.filePath meta.path }}/facil.io
 
 I was able to start the server and answer a request.
 
 Unfortunately Zig is unable to translate `fiobj_free()`.
 Therefore I did not think it was worth investigating further.
 
-[Download]({{ meta.path }}/facil.io.tar.gz) all files.
+link:{{ meta.path }}/facil.io.tar.gz[Download] all files.
 
-```zig
-{{ lib.theme.dermetfan.readFile "${meta.path}/facil.io/main.zig" }}
-```
+[source, zig]
+----
+include::{files}/main.zig[]
+----
 
-```
+----
 ./zig-cache/o/…/cimport.zig:2918:24: error: unable to translate function
 pub const fiobj_free = @compileError("unable to translate function");
                        ^
 ./src/main.zig:8:12: note: referenced here
     defer c.fiobj_free(HTTP_HEADER_X_DATA);
            ^
-```
+----
 
----
+'''
 
-# [LWAN](https://lwan.ws) <a name="lwan"></a>
+== https://lwan.ws[LWAN]
 
 Those macros can clearly not easily be translated to Zig, so the journey ends abruptly.
 
-```c
+[source, c]
+----
 #define LWAN_HANDLER_REF(name_) lwan_handler_##name_
 #define LWAN_HANDLER(name_)                                                    \
     static enum lwan_http_status lwan_handler_##name_(                         \
@@ -204,6 +224,10 @@ Those macros can clearly not easily be translated to Zig, so the journey ends ab
         struct lwan_request *request __attribute__((unused)),                  \
         struct lwan_response *response __attribute__((unused)),                \
         void *data __attribute__((unused)))
-```
+----
 
+'''
+
+++++
 {{ templates.services.disqus { inherit (meta) path; } }}
+++++
