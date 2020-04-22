@@ -3,7 +3,6 @@
 pkgs.mkShell {
   buildInputs = [
     (pkgs.styx.overrideAttrs (oldAttrs: {
-      nativeBuildInputs = [ pkgs.diffutils ];
       patches = [
         (pkgs.writeText "41.patch" ''
           diff --git a/derivation.nix b/derivation.nix
