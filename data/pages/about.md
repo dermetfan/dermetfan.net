@@ -53,6 +53,7 @@ Find me on:
 
 #### Authored
 
+- {{ templates.partials.github-issue "rycee" "home-manager" 1185 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1163 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1162 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager"  932 {} }}
