@@ -2,7 +2,7 @@
 title = "About";
 ---}
 
-I am studying Bachelor of Computer Science (now called Bachelor of Informatics) at [H-BRS].
+I am studying for my bachelor of computer science (now called “bachelor of informatics”) at [H-BRS].
 
 Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
 
