@@ -169,6 +169,11 @@ Find me on:
 - {{ templates.partials.github-issue "libgdx" "libgdx" 2345 {} }}
 - {{ templates.partials.github-issue "libgdx" "libgdx" 1951 {} }}
 
+### swaylock-fancy
+
+- {{ templates.partials.github-issue "Big-B" "swaylock-fancy" 4 {} }}
+- {{ templates.partials.github-issue "Big-B" "swaylock-fancy" 3 {} }}
+
 ### Flowblade
 
 - {{ templates.partials.github-issue "jliljebl" "flowblade" 131 {} }}
