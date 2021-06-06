@@ -1,7 +1,7 @@
 {
   styx,
   extraConf ? {},
-  pkgs ? import <nixpkgs> {}
+  pkgs ? import ./nixpkgs.nix
 }:
 
 rec {
