@@ -55,6 +55,6 @@ lib.concatStringsSep " " (
   (lib.optional show.repo repo) ++
   (lib.optional show.type (if data ? prState then "PR" else "issue")) ++
   [ "<a href=\"${data.url}\">#${toString number}</a>" ] ++
-  (lib.optional show.title "\"${lib.escapeHTML data.title}\"") ++
+  (lib.optional show.title "\"${lib.escapeHTML (lib.escape [ "[" "]" "(" ")" "`" ] data.title)}\"") ++
   (lib.optional show.state "(${lib.toLower (data.prState or data.issueState)})")
 )
