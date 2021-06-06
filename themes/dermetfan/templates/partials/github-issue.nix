@@ -22,13 +22,18 @@ let
         state = true;
       } // showArg;
 
-  callApi = graphql: (
-    (pkgs.callPackage lib.theme.dermetfan.githubApi {
-      fetchurlImpure = pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {};
-    })
-      conf.secrets.github.personalAccessToken
-      graphql
-  ).data;
+  callApi = graphql:
+    let
+      response =
+        (pkgs.callPackage lib.theme.dermetfan.githubApi {
+          fetchurlImpure = pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {};
+        })
+          conf.secrets.github.personalAccessToken
+          graphql;
+    in
+      if response ? "message"
+      then builtins.throw response.message
+      else response.data;
 
   data = (callApi ''{
     repository(name: "${repo}", owner: "${owner}") {
