@@ -71,6 +71,7 @@ Find me on:
 
 #### Reviewed or Merged
 
+- {{ templates.partials.github-issue "rycee" "home-manager" 1289 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1106 {} }}
 
 ### NixOS-shell
@@ -147,6 +148,10 @@ Find me on:
 
 - {{ templates.partials.github-issue "ziglang" "zig" 4797 {} }}
 
+### Zig Language Server
+
+- {{ templates.partials.github-issue "zigtools" "zls" 330 {} }}
+
 ### libGDX
 
 - {{ templates.partials.github-issue "libgdx" "libgdx" 3151 {} }}
@@ -173,6 +178,11 @@ Find me on:
 
 - {{ templates.partials.github-issue "Big-B" "swaylock-fancy" 4 {} }}
 - {{ templates.partials.github-issue "Big-B" "swaylock-fancy" 3 {} }}
+
+### EdgeDB
+
+- {{ templates.partials.github-issue "edgedb" "edgedb" 2231 {} }}
+- {{ templates.partials.github-issue "edgedb" "edgedb" 2232 {} }}
 
 ### Flowblade
 
