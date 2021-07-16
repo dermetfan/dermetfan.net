@@ -144,6 +144,10 @@ Find me on:
 - {{ templates.partials.github-issue "zyedidia" "micro" 799 {} }}
 - {{ templates.partials.github-issue "zyedidia" "micro" 798 {} }}
 
+### Kakoune
+
+- {{ templates.partials.github-issue "mawww" "kakoune" 4267 {} }}
+
 ### Zig
 
 - {{ templates.partials.github-issue "ziglang" "zig" 4797 {} }}
@@ -183,6 +187,10 @@ Find me on:
 
 - {{ templates.partials.github-issue "edgedb" "edgedb" 2231 {} }}
 - {{ templates.partials.github-issue "edgedb" "edgedb" 2232 {} }}
+
+### svelte-select
+
+- {{ templates.partials.github-issue "rob-balfre" "svelte-select" 247 {} }}
 
 ### Flowblade
 
