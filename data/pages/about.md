@@ -24,11 +24,13 @@ Find me on:
 - My [dotfiles](https://hg.sr.ht/~dermetfan/dotfiles) using [home-manager](https://github.com/rycee/home-manager/)
 - My [NixOS configuration](https://hg.sr.ht/~dermetfan/nixos-config)
 - [This blog](https://hg.sr.ht/~dermetfan/dermetfan-blog) using the [Styx](https://styx-static.github.io/styx-site/) static site generator
+- A SeaweedFS [NixOS module](https://hg.sr.ht/~dermetfan/seaweedfs-nixos) I wrote to test failure scenarios
 
 ### Rust
 
 - [ISO 8601](https://crates.io/crates/iso-8601) parser  
   *Born out of {{ templates.partials.github-issue "chronotope" "chrono" 244 { repo = true; title = false; } }}.*
+- Learning project: Conway's [Game of Life](https://hg.sr.ht/~dermetfan/cursedlife) for the terminal using ncurses
 
 ### Zig
 
@@ -188,6 +190,10 @@ Find me on:
 - {{ templates.partials.github-issue "edgedb" "edgedb" 2231 {} }}
 - {{ templates.partials.github-issue "edgedb" "edgedb" 2232 {} }}
 
+### CUE
+
+- {{ templates.partials.github-issue "cue-lang" "cue" 1123 {} }} (working for [IOHK])
+
 ### svelte-select
 
 - {{ templates.partials.github-issue "rob-balfre" "svelte-select" 247 {} }}
@@ -199,3 +205,5 @@ Find me on:
 ### jadpole.github.io
 
 - {{ templates.partials.github-issue "jadpole" "jadpole.github.io" 7 {} }}
+
+[IOHK]: https://iohk.io
