@@ -21,8 +21,8 @@ Find me on:
 
 ### Nix / NixOS
 
-- My [dotfiles](https://hg.sr.ht/~dermetfan/dotfiles) using [home-manager](https://github.com/rycee/home-manager/)
-- My [NixOS configuration](https://hg.sr.ht/~dermetfan/nixos-config)
+- My [dotfiles](https://hg.sr.ht/~dermetfan/nix-config/browse/dotfiles/.config/nixpkgs) using [home-manager](https://github.com/rycee/home-manager/)
+- NixOS and NixOps configurations for my [laptop](https://hg.sr.ht/~dermetfan/nix-config/browse/nixos) and [home server](https://hg.sr.ht/~dermetfan/nix-config/browse/nixops)
 - [This blog](https://hg.sr.ht/~dermetfan/dermetfan-blog) using the [Styx](https://styx-static.github.io/styx-site/) static site generator
 - A SeaweedFS [NixOS module](https://hg.sr.ht/~dermetfan/seaweedfs-nixos) I wrote to test failure scenarios
 
