@@ -2,7 +2,10 @@
 title = "About";
 ---}
 
-I am studying for my bachelor of computer science (now called “bachelor of informatics”) at [H-BRS].
+Service Reliability Engineer at [IOHK](https://iohk.io/en/team/robin-stumm).  
+*Views expressed are my own and do not necessarily reflect the view of IOHK.*
+
+On the side I study computer science (now called “informatics”) at [H-BRS].
 
 Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
 
@@ -13,7 +16,12 @@ Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
 
 Find me on:
 
-- [sourcehut hg](https://hg.sr.ht/~dermetfan)
+- [Sourcehut](https://hg.sr.ht/~dermetfan)
+- [GitHub](https://github.com/dermetfan)
+- [LinkedIn](https://www.linkedin.com/in/dermetfan)
+
+E-Mail: serverkorken *ät* gmail *dot* com  
+[PGP Key](https://keys.openpgp.org/vks/v1/by-fingerprint/F557039564B9E4F0D5A12AECFEC7CED7D00E2CBD): `F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`
 
 ---
 
