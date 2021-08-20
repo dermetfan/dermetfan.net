@@ -91,29 +91,30 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 1 {} }}
 - {{ templates.partials.github-issue "Mic92" "nixos-shell" 3 {} }}
 
-### NixOS
+### NixOS / Nixpkgs
 
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 74781 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 74552 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 54197 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 29113 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 26552 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 26541 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 26215 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 25802 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 25009 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 21538 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 20020 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 17068 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 20448 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 20449 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 21540 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 22737 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 23282 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 24438 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 29026 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 29037 {} }}
-- {{ templates.partials.github-issue "NixOS" "nixpkgs" 29055 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs" 134946 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  74781 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  74552 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  54197 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  29113 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  26552 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  26541 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  26215 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  25802 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  25009 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  21538 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  20020 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  17068 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  20448 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  20449 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  21540 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  22737 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  23282 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  24438 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  29026 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  29037 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs"  29055 {} }}
 
 ### indoc
 
@@ -200,7 +201,7 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 ### CUE
 
-- {{ templates.partials.github-issue "cue-lang" "cue" 1123 {} }} (working for [IOHK])
+- {{ templates.partials.github-issue "cue-lang" "cue" 1123 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
 ### svelte-select
 
