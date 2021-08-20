@@ -1,12 +1,14 @@
 env:
 data:
 
-builtins.replaceStrings ["\n"] [""] ''
+with data;
+
+builtins.replaceStrings ["\n"] [" "] ''
   <iframe
-    width="${data.width or "100%"}"
+    width="${width or "100%"}"
     style="
-      height: ${data.height or "100vh"};
+      height: ${height or "100vh"};
     "
-    src="${data.src or data}"
+    src="${src or data}"
   ></iframe>
 ''
