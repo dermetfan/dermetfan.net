@@ -1,3 +1,3 @@
-{ pkgs ? import ./nixpkgs.nix }:
+{ pkgs ? import ./nixpkgs.nix, ... } @ args:
 
-(pkgs.callPackage (import ./site.nix) { inherit pkgs; }).site
+(pkgs.callPackage (import ./site.nix) args).site
