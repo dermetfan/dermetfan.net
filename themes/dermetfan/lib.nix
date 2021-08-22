@@ -74,6 +74,7 @@
       );
 
     capitalize = string:
+      if string == "" then string else
       let
         chars = lib.strings.stringToCharacters string;
       in lib.concatStrings (
