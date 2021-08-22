@@ -11,7 +11,7 @@ let
         title = false;
         state = false;
       } // builtins.listToAttrs (
-        map (x: { name = x; value = true; }) showArg
+        map (field: lib.nameValuePair field true) showArg
       )
     else
       { # sensible defaults
@@ -22,20 +22,14 @@ let
         state = true;
       } // showArg;
 
-  callApi = graphql:
-    let
-      response =
-        (pkgs.callPackage lib.theme.dermetfan.githubApi {
-          fetchurlImpure = pkgs.callPackage lib.theme.dermetfan.fetchurlImpure {};
-        })
-          conf.secrets.github.personalAccessToken
-          graphql;
-    in
-      if response ? "message"
-      then builtins.throw response.message
-      else response.data;
+  libPkgs = lib.theme.dermetfan.pkgs {
+    inherit pkgs;
+    inherit (conf.theme.data) secrets hashes;
+  };
 
-  data = (callApi ''{
+  data = (libPkgs.githubApi {
+    name = "github_${owner}_${repo}_issues_${toString number}";
+  } ''{
     repository(name: "${repo}", owner: "${owner}") {
       issueOrPullRequest(number: ${toString number}) {
         ... on Issue {

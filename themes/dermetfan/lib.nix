@@ -80,31 +80,43 @@
         [ (lib.strings.toUpper (lib.lists.head chars)) ] ++ (lib.lists.tail chars)
       );
 
-    fetchurlImpure = { runCommandLocal, curl, cacert }:
-      { url, curlOpts ? "" }:
-      runCommandLocal "fetchurlImpure-${builtins.getEnv "STYX_FETCHURL_VERSION"}" {
-        __noChroot = true;
-        inherit url;
-        buildInputs = [
-          curl
-          cacert
-        ];
-      } ''
-        curl ${curlOpts} "$url" > $out
-      '';
+    pkgs = { pkgs, secrets, hashes }: {
+      inherit (
+        pkgs.appendOverlays [ (self: super: {
+          fetchurlCentral = { name, ... } @ args:
+            super.fetchurl (
+              (if hashes ? ${name} then {
+                hash = hashes.${name};
+              } else (builtins.trace "theme.dermetfan.pkgs.fetchurlCentral: no hash in ./hashes.nix for ${name}" {})) //
+              args
+            );
 
-    githubApi = { fetchurlImpure }:
-      token: query: builtins.fromJSON (
-        builtins.readFile (
-          fetchurlImpure {
-            url = https://api.github.com/graphql;
-            curlOpts = lib.concatStringsSep " " [
-              "-X POST"
-              "-H 'Authorization: token ${token}'"
-              "-d ${lib.escapeShellArg (builtins.toJSON { inherit query; })}"
-            ];
-          }
-        )
-      );
+          githubApi = { checkError ? true, name ? null }: query:
+            let
+              response = builtins.fromJSON (
+                builtins.readFile (let
+                  data = builtins.toJSON { inherit query; };
+                in self.fetchurlCentral {
+                  url = https://api.github.com/graphql;
+                  curlOpts = lib.concatStringsSep " " [
+                    # needs argument files due to https://github.com/NixOS/nixpkgs/issues/41820
+                    "-X" "POST"
+                    "-H" ("@" + (super.writeText "headers.txt" ''
+                      Authorization: token ${secrets.github.personalAccessToken}
+                    ''))
+                    "-d" ("@" + (super.writeText "data.txt" data))
+                  ];
+                  name = if name != null then name else
+                    "githubApi-" + (builtins.hashString "md5" data);
+                })
+              );
+            in if checkError then (
+              if response ? "message"
+              then builtins.throw response.message
+              else response.data
+            ) else response;
+        }) ]
+      ) fetchurlCentral githubApi;
+    };
   };
 }

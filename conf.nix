@@ -24,5 +24,10 @@
     };
 
     services.disqus.shortname = "dermetfan-blog";
+
+    data = {
+      hashes = import ./hashes.nix;
+      secrets.github.personalAccessToken = null;
+    };
   };
 }
