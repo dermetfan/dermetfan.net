@@ -1,5 +1,5 @@
 { lib }: {
-  siteUrl = http://dermetfan.net;
+  siteUrl = https://dermetfan.net;
 
   theme = {
     itemsPerPage = 10;

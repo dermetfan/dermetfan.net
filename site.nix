@@ -49,7 +49,7 @@ rec {
 
     author = {
       name = "dermetfan";
-      url = http://dermetfan.net;
+      url = conf.siteUrl;
     };
   };
 
