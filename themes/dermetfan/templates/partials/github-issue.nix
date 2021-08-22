@@ -24,7 +24,7 @@ let
 
   libPkgs = lib.theme.dermetfan.pkgs {
     inherit pkgs;
-    inherit (conf.theme.data) secrets hashes;
+    inherit (conf.data) secrets hashes;
   };
 
   data = (libPkgs.githubApi {
