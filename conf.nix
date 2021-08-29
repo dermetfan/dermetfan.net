@@ -18,9 +18,15 @@
       twitter = https://twitter.com/dermetfan;
     };
 
-    lib.highlightjs = {
-      enable = true;
-      extraLanguages = [ "nix" "rust" ];
+    lib = {
+      highlightjs = {
+        enable = true;
+        extraLanguages = [ "nix" "rust" ];
+      };
+
+      jquery.enable = false;
+      googlefonts = [];
+      font-awesome.enable = false;
     };
 
     services.disqus.shortname = "dermetfan-blog";
