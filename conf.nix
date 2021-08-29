@@ -26,7 +26,6 @@
 
       jquery.enable = false;
       googlefonts = [];
-      font-awesome.enable = false;
     };
 
     services.disqus.shortname = "dermetfan-blog";
