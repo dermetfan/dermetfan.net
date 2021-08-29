@@ -93,6 +93,8 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 ### NixOS / Nixpkgs
 
+- {{ templates.partials.github-issue "NixOS" "nixpkgs" 136122 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs" 136121 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 134946 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs"  74781 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs"  74552 {} }}
