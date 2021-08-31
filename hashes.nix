@@ -1,7 +1,7 @@
 {
-  # 2021-08-30
-  "github_NixOS_nixpkgs_issues_136122" = "sha256-G34tLZONQmLwTx+h3YWknGxBMJhfbXj+Tb/ShfvgIIM=";
-  "github_NixOS_nixpkgs_issues_136121" = "sha256-UuXLwE/p9+K3bRXR1rzK9GqjY4gya1h8p8K4Z4mSUAo=";
+  # 2021-08-31
+  "github_NixOS_nixpkgs_issues_136122" = "sha256-3MNASbTDagm2UdgfmpDNI/s2GTKBnQbR0VKU/uAHMTo=";
+  "github_NixOS_nixpkgs_issues_136121" = "sha256-AdwGlHnf5L+xjklhWuIscCABVLKCfPCHeAxTHsq5tHE=";
 
   # 2021-08-22
   "github_ziglang_zig_issues_1499" = "sha256-9d9DaPp6dRfGgBbeCADShxS1mJ1bvZYGkVPqGbP45Q8=";
