@@ -1,19 +1,18 @@
 {
   styx,
+  styxLib ? import styx.lib styx,
   extraConf ? {},
-  pkgs ? import ./nixpkgs.nix
-}:
+  pkgs
+} @ args:
 
 rec {
   inherit (
     let
-      themes = with (import styx.themes); [
+      themes = with (import styx.themes { inherit pkgs; }); [
         generic-templates
         ghostwriter
         themes/dermetfan
       ];
-
-      styxLib = import styx.lib styx;
     in
       styxLib.themes.load {
         inherit styxLib themes;
@@ -98,7 +97,7 @@ rec {
     };
   };
 
-  site = with lib; mkSite {
+  site = (with lib; mkSite {
     inherit files;
 
     pageList = pagesToList {
@@ -118,5 +117,7 @@ rec {
       tar -chaf h2o.tar.gz h2o
       tar -chaf facil.io.tar.gz facil.io
     '';
+  }) // {
+    overrideArgs = f: (import ./site.nix (args // (f args))).site;
   };
 }
