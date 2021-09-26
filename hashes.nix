@@ -1,6 +1,7 @@
 {
-  # 2021-09-12
-  "github_NixOS_nixpkgs_issues_137395" = "sha256-FN9aiolGBb63Va7qu+R2Jw820KmWbFhP6qZSSJ1fBZY=";
+  # 2021-09-26
+  "github_NixOS_nixpkgs_issues_138801" = "sha256-ERAEkUCou/agRfFTf0/uXwGcImYk1GzrCx2kee/W55g=";
+  "github_NixOS_nixpkgs_issues_137395" = "sha256-dpH2Rfu8AtS6xBA/8kvY4+3w8gtj3mjZ8YWzV8gf5Pc=";
 
   # 2021-09-10
   "github_input-output-hk_bitte_issues_63" = "sha256-Afk3aqLVpN7ClPoY3pJrpwpJGl+ja10fhBtwPcyVMGI=";
