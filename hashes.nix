@@ -1,4 +1,9 @@
 {
+  # 2021-11-06
+  "github_go-echarts_go-echarts_issues_207" = "sha256-WEaJNpdibMh8kNYXESCVDpW1NidiHHWIfmO2rHnNHyc=";
+  "github_go-echarts_go-echarts_issues_206" = "sha256-cwz8MUa0lmv3OasPlbp7PiRpSnBm05VKxmJJ3n2pOX8=";
+  "github_NixOS_nixpkgs_issues_144458" = "sha256-Z/REYyL9W2KlvPAQzR9ez7lCvaH3bd4PykLotJX9IK4=";
+
   # 2021-09-26
   "github_NixOS_nixpkgs_issues_138801" = "sha256-ERAEkUCou/agRfFTf0/uXwGcImYk1GzrCx2kee/W55g=";
   "github_NixOS_nixpkgs_issues_137395" = "sha256-dpH2Rfu8AtS6xBA/8kvY4+3w8gtj3mjZ8YWzV8gf5Pc=";
