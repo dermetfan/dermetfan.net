@@ -1,4 +1,8 @@
 {
+  # 2022-01-09
+  "github_divnix_data-merge_issues_1" = "sha256-+LXjPNe7U4Yg8PCIUVvbXS6uMW1hujJ6YVXgh3KW7t4=";
+  "github_Canop_broot_issues_467" = "sha256-imlJsFktHK0AEMax1boASGVx5bO2Qedh54pbFNmF4Ws=";
+
   # 2021-11-06
   "github_go-echarts_go-echarts_issues_207" = "sha256-WEaJNpdibMh8kNYXESCVDpW1NidiHHWIfmO2rHnNHyc=";
   "github_go-echarts_go-echarts_issues_206" = "sha256-cwz8MUa0lmv3OasPlbp7PiRpSnBm05VKxmJJ3n2pOX8=";

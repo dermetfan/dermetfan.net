@@ -126,6 +126,10 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 - {{ templates.partials.github-issue "input-output-hk" "bitte"     63 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 - {{ templates.partials.github-issue "input-output-hk" "bitte-cli" 28 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
+### data-merge
+
+- {{ templates.partials.github-issue "divnix" "data-merge" 1 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
 ### go-echarts
 
 - {{ templates.partials.github-issue "go-echarts" "go-echarts" 207 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
@@ -181,6 +185,10 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 ### Zig Language Server
 
 - {{ templates.partials.github-issue "zigtools" "zls" 330 {} }}
+
+### Broot
+
+- {{ templates.partials.github-issue "Canop" "broot" 467 {} }}
 
 ### libGDX
 
