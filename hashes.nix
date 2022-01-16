@@ -1,4 +1,8 @@
 {
+  # 2022-01-16
+  "github_rycee_home-manager_issues_2642" = "sha256-kSvaQBFrGTyJAf+2Z8oUNdL8Moixn2X2AP1Ye+EDlWw=";
+  "github_rycee_home-manager_issues_2641" = "sha256-ocWghrTnLPAHNvakrFcpSezfAcMb3wzGnJFyu/uvDf8=";
+
   # 2022-01-09
   "github_divnix_data-merge_issues_1" = "sha256-+LXjPNe7U4Yg8PCIUVvbXS6uMW1hujJ6YVXgh3KW7t4=";
   "github_Canop_broot_issues_467" = "sha256-imlJsFktHK0AEMax1boASGVx5bO2Qedh54pbFNmF4Ws=";
