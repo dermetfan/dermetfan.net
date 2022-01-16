@@ -63,6 +63,7 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 #### Authored
 
+- {{ templates.partials.github-issue "rycee" "home-manager" 2644 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 2642 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 2641 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1185 {} }}
