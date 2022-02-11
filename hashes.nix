@@ -1,4 +1,7 @@
 {
+  # 2022-02-11
+  "github_NixOS_nix_issues_6083" = "sha256-97tGS6SEmL33lz0zCiBsqHritoCZJ57DIqeKPpjnW2Q=";
+
   # 2022-01-16
   "github_rycee_home-manager_issues_2644" = "sha256-KN3ihwI1dlSLqBb20GfYKAIslvbqWBIpX2EdC6FGvLw=";
   "github_rycee_home-manager_issues_2642" = "sha256-3tOa03G3gf/mngoqOgYmoFsdMJSwdevWwIINhepF99A=";
