@@ -1,18 +1,16 @@
 {
   inputs = {
+    nixpkgs.follows = "styx/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     styx = {
       url = "github:dermetfan/styx/modernize";
-      inputs = {
-        utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.utils.follows = "flake-utils";
     };
   };
 
   outputs = { self, nixpkgs, flake-utils, styx, ... } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = nixpkgs.legacyPackages.${system};
     in rec {
       packages = self.outputs.overlay {} pkgs;
 
