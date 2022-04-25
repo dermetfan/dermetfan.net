@@ -1,15 +1,13 @@
 {
-  # 2022-02-11
-  "github_NixOS_nix_issues_6083" = "sha256-97tGS6SEmL33lz0zCiBsqHritoCZJ57DIqeKPpjnW2Q=";
+  # 2022-04-25
+  "github_NixOS_nix_issues_6083" = "sha256-YQEgQMhNbbq5JQ0k3OxePLcRw57WyddsBnZfmhUtj3g=";
+  "github_divnix_data-merge_issues_1" = "sha256-ABbyJn8nn4URJue0liNNWWKYvQNCfiho9CiFe787mLM=";
+  "github_Canop_broot_issues_467" = "sha256-87BM3OCiGeXpQ71iqjvcShtsO7cGdli1cyxyg2Y8ljU=";
 
   # 2022-01-16
   "github_rycee_home-manager_issues_2644" = "sha256-KN3ihwI1dlSLqBb20GfYKAIslvbqWBIpX2EdC6FGvLw=";
   "github_rycee_home-manager_issues_2642" = "sha256-3tOa03G3gf/mngoqOgYmoFsdMJSwdevWwIINhepF99A=";
   "github_rycee_home-manager_issues_2641" = "sha256-e5o4KZVQ1576pHOFcPjCTobVgfvLa8//y8xiw13aHdM=";
-
-  # 2022-01-09
-  "github_divnix_data-merge_issues_1" = "sha256-+LXjPNe7U4Yg8PCIUVvbXS6uMW1hujJ6YVXgh3KW7t4=";
-  "github_Canop_broot_issues_467" = "sha256-imlJsFktHK0AEMax1boASGVx5bO2Qedh54pbFNmF4Ws=";
 
   # 2021-11-06
   "github_go-echarts_go-echarts_issues_207" = "sha256-WEaJNpdibMh8kNYXESCVDpW1NidiHHWIfmO2rHnNHyc=";
