@@ -9,9 +9,9 @@ let
 in
 
 ''
-  <ul style="
-    list-style: none;
-    opacity: 0.5;
+  <ul style="'' +
+    "list-style: none;" +
+    "opacity: 0.5;" + ''
   ">
     <li style="${liStyle}">
       ${lib.theme.dermetfan.capitalize taxonomy}:
