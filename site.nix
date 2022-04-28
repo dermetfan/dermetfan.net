@@ -109,13 +109,24 @@ rec {
       inherit (conf) siteUrl;
     };
 
-    postGen = ''
+    postGen = let
+      libPkgs = lib.theme.dermetfan.pkgs {
+        inherit pkgs;
+        inherit (conf.data) secrets hashes;
+      };
+    in ''
       asciidoctor_css=$(dirname $(realpath ${pkgs.asciidoctor}/bin/asciidoctor))/../lib/ruby/gems/*/gems/${pkgs.asciidoctor.meta.name}/data/stylesheets/asciidoctor-default.css
       head -n 185 $asciidoctor_css | tail -n 3 > $out/styles/asciidoctor-default-anchor.css
 
       cd $out/posts/zig-with-c-web-servers
       tar -chaf h2o.tar.gz h2o
       tar -chaf facil.io.tar.gz facil.io
+
+      mkdir $out/posts/distributed-tracing-and-opentelemetry
+      cd $out/posts/distributed-tracing-and-opentelemetry
+      cp ${libPkgs.fetchurlCentral rec { url = "https://get.uptrace.dev/opentelemetry-and-uptrace/${name}.png"; name = "tracing-graph"; }} tracing-graph.png
+      cp ${libPkgs.fetchurlCentral rec { url = "https://get.uptrace.dev/opentelemetry-and-uptrace/${name}.png"; name = "trace-graph"; }} trace-graph.png
+      cp ${libPkgs.fetchurlCentral rec { url = "https://get.uptrace.dev/opentelemetry-and-uptrace/${name}.png"; name = "uptrace"; }} uptrace.png
     '';
   }) // {
     overrideArgs = f: (import ./site.nix (args // (f args))).site;

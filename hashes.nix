@@ -1,4 +1,9 @@
 {
+  # 2022-04-28
+  uptrace = "sha256-xGXB7jpiaj07nqIXuEgSEdyXl5zcyg3zkM6289gFc40=";
+  trace-graph = "sha256-5Xv6FSL4Y3dRTmWGQU3pKX4qhLRXCaYu7mzB1P3KwEY=";
+  tracing-graph = "sha256-xT/2ThI7gyIuDdszdzOYFso4MxMtU+P2NNf1MNsMbV4=";
+
   # 2022-04-25
   "github_NixOS_nix_issues_6083" = "sha256-YQEgQMhNbbq5JQ0k3OxePLcRw57WyddsBnZfmhUtj3g=";
   "github_divnix_data-merge_issues_1" = "sha256-ABbyJn8nn4URJue0liNNWWKYvQNCfiho9CiFe787mLM=";
