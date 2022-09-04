@@ -128,6 +128,10 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 - {{ templates.partials.github-issue "NixOS" "nix" 6083 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
+### nix.dev
+
+- {{ templates.partials.github-issue "NixOS" "nix.dev" 316 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
 ### bitte
 
 - {{ templates.partials.github-issue "input-output-hk" "bitte"     63 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
@@ -136,6 +140,10 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 ### data-merge
 
 - {{ templates.partials.github-issue "divnix" "data-merge" 1 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### nomad-driver-podman
+
+- {{ templates.partials.github-issue "hashicorp" "nomad-driver-podman" 183 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
 ### go-echarts
 

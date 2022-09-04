@@ -1,4 +1,8 @@
 {
+  # 2022-09-04
+  "github_NixOS_nix.dev_issues_316" = "sha256-CxBzXzmXzF8wu7OKnDeGksjEn7/5rQtwuuZRcsXytTQ=";
+  "github_hashicorp_nomad-driver-podman_issues_183" = "sha256-vnpvUGHfL1sMdte/iFzAJ2tdLVTkz9K5cw+PGg84TCA=";
+
   # 2022-04-28
   uptrace = "sha256-xGXB7jpiaj07nqIXuEgSEdyXl5zcyg3zkM6289gFc40=";
   trace-graph = "sha256-5Xv6FSL4Y3dRTmWGQU3pKX4qhLRXCaYu7mzB1P3KwEY=";
