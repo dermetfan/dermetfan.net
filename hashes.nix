@@ -1,4 +1,7 @@
 {
+  # 2022-09-27
+  "github_rycee_home-manager_issues_2644" = "sha256-PQZZp955zxdtwZCyyHbqiQkJ+QEQQQwm45flge91gP0=";
+
   # 2022-09-04
   "github_NixOS_nix.dev_issues_316" = "sha256-CxBzXzmXzF8wu7OKnDeGksjEn7/5rQtwuuZRcsXytTQ=";
   "github_hashicorp_nomad-driver-podman_issues_183" = "sha256-vnpvUGHfL1sMdte/iFzAJ2tdLVTkz9K5cw+PGg84TCA=";
@@ -14,7 +17,6 @@
   "github_Canop_broot_issues_467" = "sha256-87BM3OCiGeXpQ71iqjvcShtsO7cGdli1cyxyg2Y8ljU=";
 
   # 2022-01-16
-  "github_rycee_home-manager_issues_2644" = "sha256-KN3ihwI1dlSLqBb20GfYKAIslvbqWBIpX2EdC6FGvLw=";
   "github_rycee_home-manager_issues_2642" = "sha256-3tOa03G3gf/mngoqOgYmoFsdMJSwdevWwIINhepF99A=";
   "github_rycee_home-manager_issues_2641" = "sha256-e5o4KZVQ1576pHOFcPjCTobVgfvLa8//y8xiw13aHdM=";
 
