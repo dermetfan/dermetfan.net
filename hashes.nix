@@ -1,5 +1,6 @@
 {
   # 2022-09-27
+  "github_rycee_home-manager_issues_3273" = "sha256-PElDW5M4axk9+sqQpV4aX17FU49En0SzP0vSUfvlLu4=";
   "github_rycee_home-manager_issues_2644" = "sha256-PQZZp955zxdtwZCyyHbqiQkJ+QEQQQwm45flge91gP0=";
 
   # 2022-09-04
