@@ -85,6 +85,7 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 #### Reviewed or Merged
 
 - {{ templates.partials.github-issue "rycee" "home-manager" 3273 {} }}
+- {{ templates.partials.github-issue "rycee" "home-manager" 3272 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1289 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 1106 {} }}
 
@@ -137,6 +138,10 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 - {{ templates.partials.github-issue "input-output-hk" "bitte"     63 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 - {{ templates.partials.github-issue "input-output-hk" "bitte-cli" 28 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano Node
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-node" 4489 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
 ### data-merge
 

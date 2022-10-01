@@ -1,6 +1,10 @@
 {
+  # 2022-10-01
+  "github_input-output-hk_cardano-node_issues_4489" = "sha256-TMKgo7VYAaFohBdJiGdRWWR1TjZDbXEz6t0VigBKs1c=";
+  "github_rycee_home-manager_issues_3273" = "sha256-x0eeUwqjj7oXOGf4j76F4yaAoM78zOqsp5fjvmepQs0=";
+  "github_rycee_home-manager_issues_3272" = "sha256-PmBTavYzWmj7i0fbAun5GZI72j/aklEePbKEzgbuA3s=";
+
   # 2022-09-27
-  "github_rycee_home-manager_issues_3273" = "sha256-PElDW5M4axk9+sqQpV4aX17FU49En0SzP0vSUfvlLu4=";
   "github_rycee_home-manager_issues_2644" = "sha256-PQZZp955zxdtwZCyyHbqiQkJ+QEQQQwm45flge91gP0=";
 
   # 2022-09-04
