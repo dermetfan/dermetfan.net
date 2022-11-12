@@ -152,6 +152,29 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 ### Cardano Node
 
 - {{ templates.partials.github-issue "input-output-hk" "cardano-node" 4489 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "input-output-hk" "cardano-node" 4518 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano DB Sync
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-db-sync" 1280 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano Ledger
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-ledger" 3137 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "input-output-hk" "cardano-ledger" 3097 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano Ogmios
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-ogmios" 5 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano Addresses
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-addresses" 205 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
+### Cardano Base
+
+- {{ templates.partials.github-issue "input-output-hk" "cardano-base" 339 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "input-output-hk" "cardano-base" 323 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
 ### data-merge
 

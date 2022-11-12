@@ -1,6 +1,16 @@
 {
+  # 2022-11-12
+  "github_input-output-hk_cardano-node_issues_4489" = "sha256-k2l7qcDhv6xhMQWGJrzaRu1OzrygWJXfL3irH8NGi2g=";
+  "github_input-output-hk_cardano-node_issues_4518" = "sha256-dnzDQhY73j9pghD9gwBSAUEo/cF2TSrfTg6UzHgeMmg=";
+  "github_input-output-hk_cardano-db-sync_issues_1280" = "sha256-TXBMi9/mHZtgFuWqUTtzhAqgYE7X/vVg2qGc56tzkFk=";
+  "github_input-output-hk_cardano-ledger_issues_3137" = "sha256-4ZHWwYz7PPaYM0bGVMROzy4qX9uM14bH4Moc2UUFxSQ=";
+  "github_input-output-hk_cardano-ledger_issues_3097" = "sha256-D/pUx3fnxTn3eBJ+rbkMiXtQ2YZxL4WA3Ck1dfuF3Q4=";
+  "github_input-output-hk_cardano-ogmios_issues_5" = "sha256-ByG1HJ3T7B4HNOl2X5hDJFIQ/sb/0KIifZ6s8reShWg=";
+  "github_input-output-hk_cardano-addresses_issues_205" = "sha256-df3xtQ62s82gsezGx06g5DO2VUviYNNux6xgJpg4iBw=";
+  "github_input-output-hk_cardano-base_issues_339" = "sha256-WXNudunh/Yfw2dS5UXvkTyeLlbAEe3TUJf+juQqjPzs=";
+  "github_input-output-hk_cardano-base_issues_323" = "sha256-ns06P5ohGj9pf8xClENq2FIwd7hMM6o1CUJnpwHjM+E=";
+
   # 2022-10-01
-  "github_input-output-hk_cardano-node_issues_4489" = "sha256-TMKgo7VYAaFohBdJiGdRWWR1TjZDbXEz6t0VigBKs1c=";
   "github_rycee_home-manager_issues_3273" = "sha256-x0eeUwqjj7oXOGf4j76F4yaAoM78zOqsp5fjvmepQs0=";
   "github_rycee_home-manager_issues_3272" = "sha256-PmBTavYzWmj7i0fbAun5GZI72j/aklEePbKEzgbuA3s=";
 
