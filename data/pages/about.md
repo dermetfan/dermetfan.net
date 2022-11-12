@@ -2,21 +2,18 @@
 title = "About";
 ---}
 
-Service Reliability Engineer at [IOHK](https://iohk.io/en/team/robin-stumm).  
+Site Reliability Engineer at [IOHK](https://iohk.io/en/team/robin-stumm).  
 *Views expressed are my own and do not necessarily reflect the view of IOHK.*
-
-On the side I study computer science (now called “informatics”) at [H-BRS].
 
 Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
 
 [Zig]: https://ziglang.org
 [Rust]: https://rust-lang.org
 [NixOS]: https://nixos.org
-[H-BRS]: https://h-brs.de
 
 Find me on:
 
-- [Sourcehut](https://hg.sr.ht/~dermetfan)
+- Sourcehut: [Git](https://git.sr.ht/~dermetfan), [Hg](https://hg.sr.ht/~dermetfan)
 - [GitHub](https://github.com/dermetfan)
 - [LinkedIn](https://www.linkedin.com/in/dermetfan)
 
@@ -25,14 +22,19 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 ---
 
-## Prior Work Worth Mentioning
+## Projects
 
 ### Nix / NixOS
 
-- My [dotfiles](https://hg.sr.ht/~dermetfan/nix-config/browse/dotfiles/.config/nixpkgs) using [home-manager](https://github.com/rycee/home-manager/)
-- NixOS and NixOps configurations for my [laptop](https://hg.sr.ht/~dermetfan/nix-config/browse/nixos) and [home server](https://hg.sr.ht/~dermetfan/nix-config/browse/nixops)
+- My personal Nix flake that defines:
+	- [NixOS configurations](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/nixosConfigurations) for my laptops and home servers
+	- my [dotfiles](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/homeManagerProfiles/dermetfan) using [home-manager](https://github.com/rycee/home-manager/).
+	- a few [nix packages](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/overlays), [NixOS modules](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/nixosModules), [home-manager modules](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/homeManagerModules), and [library functions](https://git.sr.ht/~dermetfan/garnix/tree/master/item/parts/lib) that are not in nixpkgs
 - [This blog](https://hg.sr.ht/~dermetfan/dermetfan-blog) using the [Styx](https://styx-static.github.io/styx-site/) static site generator
-- A SeaweedFS [NixOS module](https://hg.sr.ht/~dermetfan/seaweedfs-nixos) I wrote to test failure scenarios
+- [home-manager-shell](https://git.sr.ht/~dermetfan/home-manager-shell), like nix-shell for your home-manager configuration
+- A [NixOS module for SeaweedFS](https://hg.sr.ht/~dermetfan/seaweedfs-nixos) I wrote to test failure scenarios
+- A [Nix flake for Filestash](https://git.sr.ht/~dermetfan/filestash.nix) that defines packages and a NixOS module
+- A [Nix package for Keymouse](https://git.sr.ht/~dermetfan/keymouse-flake)
 
 ### Rust
 
@@ -51,6 +53,14 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
   *I have not worked on this library in years so I am happy to see it live on in Tommy Ettinger's [fork](https://github.com/tommyettinger/gdx-utils).*
 
 [libGDX]: https://libgdx.com
+
+### Go
+
+- [Cicero](https://github.com/input-output-hk/cicero), an if-this-then-that machine on HashiCorp Nomad that is both event- and state-based.  
+  {{ templates.partials.iog-logo-inline { title = "IOHK project"; } }} *This is an IOHK project on which I am the primary author.*  
+  *See IOHK's ci-world repository for our [production deployment](https://github.com/input-output-hk/ci-world/blob/main/nix/cloud/nomadEnvs/cicero/default.nix).*
+- [Tullia](https://github.com/input-output-hk/tullia), a sandboxed multi-runtime task DAG runner with Cicero integration.  
+  {{ templates.partials.iog-logo-inline { title = "IOHK project"; } }} *This is an IOHK project on which I am the secondary author.*
 
 ### Lua
 
@@ -258,5 +268,3 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 ### jadpole.github.io
 
 - {{ templates.partials.github-issue "jadpole" "jadpole.github.io" 7 {} }}
-
-[IOHK]: https://iohk.io
