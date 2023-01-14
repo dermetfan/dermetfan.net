@@ -1,4 +1,7 @@
 {
+  # 2023-01-14
+  "github_NixOS_nixpkgs_issues_210705" = "sha256-9wZ/VWrhSPb/X/R8E9O+rszoWQM6NyeBwm6Gnl2F8tc=";
+
   # 2022-11-12
   "github_input-output-hk_cardano-node_issues_4489" = "sha256-k2l7qcDhv6xhMQWGJrzaRu1OzrygWJXfL3irH8NGi2g=";
   "github_input-output-hk_cardano-node_issues_4518" = "sha256-dnzDQhY73j9pghD9gwBSAUEo/cF2TSrfTg6UzHgeMmg=";
