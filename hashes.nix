@@ -1,4 +1,7 @@
 {
+  # 2023-05-22
+  "github_NixOS_nix_issues_8284" = "sha256-3M4chGQkUbmopk5PWwJQxXQzvMCcf9zUew/undbMS0s=";
+
   # 2023-01-14
   "github_NixOS_nixpkgs_issues_210705" = "sha256-9wZ/VWrhSPb/X/R8E9O+rszoWQM6NyeBwm6Gnl2F8tc=";
 
