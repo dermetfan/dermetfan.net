@@ -1,5 +1,6 @@
 {
   # 2023-11-04
+  github_rycee_home-manager_issues_4603 = "sha256-jpcuJYErM2AeUyaLzS+HBEpGfXHLeuGi5+1lcacKs/g=";
   github_input-output-hk_cardano-addresses_issues_205 = "sha256-e3ofmx2tV0wvofOzKeUNiWXWCTP0+R8OHmLYmb3a2to=";
 
   # 2023-05-22
