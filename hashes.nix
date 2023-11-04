@@ -1,4 +1,7 @@
 {
+  # 2023-11-04
+  github_input-output-hk_cardano-addresses_issues_205 = "sha256-e3ofmx2tV0wvofOzKeUNiWXWCTP0+R8OHmLYmb3a2to=";
+
   # 2023-05-22
   github_NixOS_nix_issues_8284 = "sha256-3M4chGQkUbmopk5PWwJQxXQzvMCcf9zUew/undbMS0s=";
 
@@ -12,7 +15,6 @@
   github_input-output-hk_cardano-ledger_issues_3137 = "sha256-70prFZ8Yh8cu9nLKH8l0BBcES6Vte9vrEALP2ztPA2g=";
   github_input-output-hk_cardano-ledger_issues_3097 = "sha256-D/pUx3fnxTn3eBJ+rbkMiXtQ2YZxL4WA3Ck1dfuF3Q4=";
   github_input-output-hk_cardano-ogmios_issues_5 = "sha256-ByG1HJ3T7B4HNOl2X5hDJFIQ/sb/0KIifZ6s8reShWg=";
-  github_input-output-hk_cardano-addresses_issues_205 = "sha256-df3xtQ62s82gsezGx06g5DO2VUviYNNux6xgJpg4iBw=";
   github_input-output-hk_cardano-base_issues_339 = "sha256-7XTP7UB0qj3r4E+aXqOJZBsyR6Z5bhxgOltDFC3+Atg=";
   github_input-output-hk_cardano-base_issues_323 = "sha256-ns06P5ohGj9pf8xClENq2FIwd7hMM6o1CUJnpwHjM+E=";
 
