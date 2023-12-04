@@ -94,6 +94,8 @@ PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.open
 
 #### Reviewed or Merged
 
+- {{ templates.partials.github-issue "rycee" "home-manager" 4714 {} }}
+- {{ templates.partials.github-issue "rycee" "home-manager" 4524 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 4603 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 3273 {} }}
 - {{ templates.partials.github-issue "rycee" "home-manager" 3272 {} }}

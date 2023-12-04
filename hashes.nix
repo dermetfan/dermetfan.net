@@ -1,4 +1,8 @@
 {
+  # 2023-12-04
+  github_rycee_home-manager_issues_4714 = "sha256-o7+ztJcAoGlLJMf9Rq8MyhB8G8THZsRbHhPjne2KmzI=";
+  github_rycee_home-manager_issues_4524 = "sha256-t/wgRHMGNjZrmPBw+LHn9NKaoUBYmHQT1rXZgajfk9w=";
+
   # 2023-11-04
   github_rycee_home-manager_issues_4603 = "sha256-jpcuJYErM2AeUyaLzS+HBEpGfXHLeuGi5+1lcacKs/g=";
   github_input-output-hk_cardano-addresses_issues_205 = "sha256-e3ofmx2tV0wvofOzKeUNiWXWCTP0+R8OHmLYmb3a2to=";
