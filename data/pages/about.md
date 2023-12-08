@@ -17,8 +17,7 @@ Find me on:
 - [GitHub](https://github.com/dermetfan)
 - [LinkedIn](https://www.linkedin.com/in/dermetfan)
 
-E-Mail: serverkorken *ät* gmail *dot* com  
-PGP Key: [`F557 0395 64B9 E4F0 D5A1 2AEC FEC7 CED7 D00E 2CBD`](https://keys.openpgp.org/vks/v1/by-fingerprint/F557039564B9E4F0D5A12AECFEC7CED7D00E2CBD)
+E-Mail: serverkorken *ät* gmail *dot* com
 
 ---
 
