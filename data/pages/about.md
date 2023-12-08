@@ -5,10 +5,9 @@ title = "About";
 Site Reliability and Developer Experience Engineer at [IOHK](https://iohk.io).  
 *Views expressed are my own and do not necessarily reflect the view of IOHK.*
 
-Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
+Currently I focus on [Zig] and the [NixOS] ecosystem.
 
 [Zig]: https://ziglang.org
-[Rust]: https://rust-lang.org
 [NixOS]: https://nixos.org
 
 Find me on:
