@@ -2,7 +2,7 @@
 title = "About";
 ---}
 
-Site Reliability Engineer at [IOHK](https://iohk.io).  
+Site Reliability and Developer Experience Engineer at [IOHK](https://iohk.io).  
 *Views expressed are my own and do not necessarily reflect the view of IOHK.*
 
 Currently I focus on [Zig], [Rust], and the [NixOS] ecosystem.
