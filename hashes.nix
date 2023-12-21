@@ -1,4 +1,13 @@
 {
+  # 2023-12-21
+  github_input-output-hk_cardano-node_issues_4518 = "sha256-Q2nBrO5tvaFdrnbNFxlXGHwSt34chd4oMWw3/DiWUGg=";
+  github_input-output-hk_cardano-node_issues_4489 = "sha256-H39rNskfIyle8diJh1E5DhZq/yHqEpiAXEDy651I83Q=";
+  github_input-output-hk_cardano-db-sync_issues_1280 = "sha256-Sf+d7avDE5eTzadaEh4R8HXHAT4T5EV7WgobOxDCIBw=";
+  github_input-output-hk_cardano-ledger_issues_3137 = "sha256-ev0VXglCkOc7zQ4sJ9X414kaUU4aASq/VOEwJ/FakOk=";
+  github_input-output-hk_cardano-ledger_issues_3097 = "sha256-T0P816qsN7Mv6UVXnhXwTmWfbT83XQsRGdusEVjsgf8=";
+  github_input-output-hk_cardano-base_issues_339 = "sha256-ThUiz8vcT7+eGoD1r7/Us2s5n+C5+gn0jUvBjTQpwcU=";
+  github_input-output-hk_cardano-base_issues_323 = "sha256-Lc4V6NtBl1X8w2X/x5i8PyKY08qzKRsDAHNnYAmbFro=";
+
   # 2023-12-04
   github_rycee_home-manager_issues_4714 = "sha256-o7+ztJcAoGlLJMf9Rq8MyhB8G8THZsRbHhPjne2KmzI=";
   github_rycee_home-manager_issues_4524 = "sha256-t/wgRHMGNjZrmPBw+LHn9NKaoUBYmHQT1rXZgajfk9w=";
@@ -14,14 +23,7 @@
   github_NixOS_nixpkgs_issues_210705 = "sha256-ti8Y964gwZnEy+Sdco2YOg2VnEThDEUs63ZNPNoTrdo=";
 
   # 2022-11-12
-  github_input-output-hk_cardano-node_issues_4489 = "sha256-k2l7qcDhv6xhMQWGJrzaRu1OzrygWJXfL3irH8NGi2g=";
-  github_input-output-hk_cardano-node_issues_4518 = "sha256-dnzDQhY73j9pghD9gwBSAUEo/cF2TSrfTg6UzHgeMmg=";
-  github_input-output-hk_cardano-db-sync_issues_1280 = "sha256-U6wyBEHpTVzVQ5eptbL+81O0uqh1hv5evZSRFZbKTFc=";
-  github_input-output-hk_cardano-ledger_issues_3137 = "sha256-70prFZ8Yh8cu9nLKH8l0BBcES6Vte9vrEALP2ztPA2g=";
-  github_input-output-hk_cardano-ledger_issues_3097 = "sha256-D/pUx3fnxTn3eBJ+rbkMiXtQ2YZxL4WA3Ck1dfuF3Q4=";
   github_input-output-hk_cardano-ogmios_issues_5 = "sha256-ByG1HJ3T7B4HNOl2X5hDJFIQ/sb/0KIifZ6s8reShWg=";
-  github_input-output-hk_cardano-base_issues_339 = "sha256-7XTP7UB0qj3r4E+aXqOJZBsyR6Z5bhxgOltDFC3+Atg=";
-  github_input-output-hk_cardano-base_issues_323 = "sha256-ns06P5ohGj9pf8xClENq2FIwd7hMM6o1CUJnpwHjM+E=";
 
   # 2022-10-01
   github_rycee_home-manager_issues_3273 = "sha256-x0eeUwqjj7oXOGf4j76F4yaAoM78zOqsp5fjvmepQs0=";
