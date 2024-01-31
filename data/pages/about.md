@@ -243,6 +243,11 @@ E-Mail: serverkorken *ät* gmail *dot* com
 
 - {{ templates.partials.github-issue "zigtools" "zls" 330 {} }}
 
+### zqlite
+
+- {{ templates.partials.github-issue "karlseguin" "zqlite.zig" 2 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "karlseguin" "zqlite.zig" 1 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
 ### Broot
 
 - {{ templates.partials.github-issue "Canop" "broot" 467 {} }}

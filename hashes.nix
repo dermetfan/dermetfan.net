@@ -1,4 +1,8 @@
 {
+  # 2024-01-31
+  "github_karlseguin_zqlite.zig_issues_2" = "sha256-rZtO7mVpB+EH+kQlSa/TFq5W9DLLUZKmDDCibx34iWs=";
+  "github_karlseguin_zqlite.zig_issues_1" = "sha256-FTW6Cq6cusagQ8S+cXF1o7tWHjz1rNF564qjO4I9E8M=";
+
   # 2023-12-21
   github_input-output-hk_cardano-node_issues_4518 = "sha256-Q2nBrO5tvaFdrnbNFxlXGHwSt34chd4oMWw3/DiWUGg=";
   github_input-output-hk_cardano-node_issues_4489 = "sha256-H39rNskfIyle8diJh1E5DhZq/yHqEpiAXEDy651I83Q=";
