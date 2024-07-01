@@ -18,7 +18,7 @@
 
   # 2023-11-04
   github_rycee_home-manager_issues_4603 = "sha256-jpcuJYErM2AeUyaLzS+HBEpGfXHLeuGi5+1lcacKs/g=";
-  github_input-output-hk_cardano-addresses_issues_205 = "sha256-e3ofmx2tV0wvofOzKeUNiWXWCTP0+R8OHmLYmb3a2to=";
+  github_input-output-hk_cardano-addresses_issues_205 = "sha256-kWz0WHMFxQShNvTnAWNGlRzxwi41OJZO550El1UUN+w=";
 
   # 2023-05-22
   github_NixOS_nix_issues_8284 = "sha256-3M4chGQkUbmopk5PWwJQxXQzvMCcf9zUew/undbMS0s=";
