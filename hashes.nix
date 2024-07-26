@@ -1,4 +1,10 @@
 {
+  # 2024-07-27
+  github_NixOS_nixpkgs_issues_310588 = "sha256-Doytipu5YBqyR3zbhAjNTx4QpgQxTS6bneoQPpNFvB8=";
+  github_NixOS_nixpkgs_issues_287491 = "sha256-dHWsvNjeVJHmSbiwXvcVJlWgddLZ+lHjbyOXR81pPdI=";
+  github_cuedo_github-webhooks_issues_76 = "sha256-6+KPM5rWWNIihGEuoMCqnHiZdu78myzyT7ulGD46MuE=";
+  github_cuedo_github-webhooks_issues_74 = "sha256-e+ZqD12Z7iT97ZSnkZm+whIRwg+MZ/MtSZN9bj/j/Cs=";
+
   # 2024-01-31
   "github_karlseguin_zqlite.zig_issues_2" = "sha256-rZtO7mVpB+EH+kQlSa/TFq5W9DLLUZKmDDCibx34iWs=";
   "github_karlseguin_zqlite.zig_issues_1" = "sha256-FTW6Cq6cusagQ8S+cXF1o7tWHjz1rNF564qjO4I9E8M=";

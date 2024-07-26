@@ -109,6 +109,8 @@ E-Mail: serverkorken *ät* gmail *dot* com
 
 ### NixOS / Nixpkgs
 
+- {{ templates.partials.github-issue "NixOS" "nixpkgs" 310588 {} }}
+- {{ templates.partials.github-issue "NixOS" "nixpkgs" 287491 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 210705 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 144458 {} }}
 - {{ templates.partials.github-issue "NixOS" "nixpkgs" 138801 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
@@ -179,6 +181,11 @@ E-Mail: serverkorken *ät* gmail *dot* com
 - {{ templates.partials.github-issue "input-output-hk" "cardano-base" 339 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 - {{ templates.partials.github-issue "input-output-hk" "cardano-base" 323 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
 
+### github-webhooks
+
+- {{ templates.partials.github-issue "cuedo" "github-webhooks" 76 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+- {{ templates.partials.github-issue "cuedo" "github-webhooks" 74 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
+
 ### data-merge
 
 - {{ templates.partials.github-issue "divnix" "data-merge" 1 {} }} {{ templates.partials.iog-logo-inline { title = "while working for IOHK"; } }}
@@ -234,6 +241,10 @@ E-Mail: serverkorken *ät* gmail *dot* com
 ### Kakoune
 
 - {{ templates.partials.github-issue "mawww" "kakoune" 4267 {} }}
+
+### easymotion.kak
+
+- [`d5772bd` fix error on ModeChange hook](https://git.sr.ht/~voroskoi/easymotion.kak/commit/215bc523324347d1e8920e80d8ac1763212941ab)
 
 ### Zig
 
